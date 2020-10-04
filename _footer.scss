@@ -1,0 +1,23 @@
+footer{
+    background-color: #000;
+    color: white;
+    width: 100%;
+    min-height: 20vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    justify-content: center;
+    p{
+        text-align: center;
+        padding: 20px 0 20px 0;
+        @include monitor {
+            font-size: 1.2em;
+        }
+    }
+    span{
+        font-weight: bold;
+    }
+}
+.color{
+    color: $color-lighten;
+}

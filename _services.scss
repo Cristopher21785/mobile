@@ -1,0 +1,115 @@
+$color-lighten: #09B1DB;
+$color-grey: #d7d7d7b0;
+$color-hsl: hsla(0, 0%, 0%, 0.911);
+@mixin bgc{
+    $list: "webkit","o","moz";
+        @each $i in $list{
+            background-image: -#{$i}-linear-gradient(top,hsla(0, 0%, 100%, 0.966),hsla(0, 0%, 100%, 0.733)), url(/img/services.jpg);
+            background-position:center;
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+        }
+    }
+.our-services{
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    @include bgc();
+}
+.title-services{
+    h2{
+        color: $color-lighten;
+        text-align: center;
+        padding-top: 60px;
+    }
+}
+
+.items{
+    padding: 10px;
+    display: flex;
+    @include phone-medium {
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        transition: background-color ease-in-out .3s;
+        &:hover{
+            background-color: #000;
+            color: #fff;
+            border-radius: 4px;
+        }
+    }
+    @include tablet {
+        width: 50%;
+    }
+    @include monitor {
+        width: 25%;
+    }
+    &:hover{
+        i{
+            background-color: #fff;
+            color: $color-lighten;
+            border: 2px solid $color-lighten;
+    }
+}
+}
+
+.info{
+    width: 100%;
+    padding: 20px;
+    p{
+        text-align: left;
+        padding: 15px 5px 5px 0;
+        @include phone-medium {
+            text-align: center;
+        }
+        @include monitor {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+
+    }
+    h2{
+        @include phone-medium {
+            text-align: center;
+        }
+        @include monitor {
+            text-align: center;
+            display: flex;
+            justify-content: center;
+        }
+    }
+}
+.galery-services{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+.logo{
+    i{
+        color: #fff;
+        display: block;
+        font-size: 2em;
+        display: block;
+        background-color: $color-lighten;
+        padding: 20px;
+        border-radius: 50%;
+        width: 83px;
+        height: 83px;
+        text-align: center;
+        transition: all ease-in-out .3s;
+        border: 2px solid $color-lighten;
+    }
+}
+
+
+
+
+
+

@@ -1,0 +1,52 @@
+$color-lighten: #09B1DB;
+$color-grey: #d7d7d7b0;
+$color-hsl: hsla(0, 0%, 0%, 0.911);
+@mixin sub{
+    $list: "webkit","o","moz";
+    @each $i in $list{
+        background-image: -#{$i}-linear-gradient(top,hsla(0, 0%, 0%, 0.178),hsla(0, 0%, 0%, 0.568)), url(/img/section-3.jpg);
+        background-position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+.sub{
+    @include sub();
+    width: 100%;
+    min-height: 45vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+.title-sub{
+    color: white;
+    h2{
+        padding: 20px 0 15px 20px;
+    }
+    p{
+        text-align: left;
+        padding: 15px 0 25px 20px;
+    }
+}
+.btn-sub{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    a{
+        text-decoration: none;
+        color: white;
+        text-align: center;
+        display: block;
+        border: 2px solid white;
+        width: 100%;
+        margin: auto;
+        padding: 15px;
+        transition: all ease-in-out .3s;
+        &:hover{
+            background-color: $color-lighten;
+            border: 2px solid $color-lighten;
+        }
+    }
+}

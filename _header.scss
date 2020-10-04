@@ -1,0 +1,215 @@
+$color-lighten: #09B1DB;
+$color-grey: #d7d7d7b0;
+$color-hsl: hsla(0, 0%, 0%, 0.911);
+@mixin flex{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 1em;
+}
+@mixin linear{
+    $list: "webkit","o","moz";
+    @each $i in $list{
+        background-image: -#{$i}-linear-gradient(top,hsla(0, 0%, 0%, 0.849),hsla(0, 0%, 0%, 0.788)), url(/img/header-image.jpg);
+        background-position:center;
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-attachment: fixed;
+    }
+}
+html{
+    scroll-behavior: smooth;
+}
+/*BURGUER*/
+#hamburguer{
+    display: none;
+    + label{
+        color: $color-lighten;
+        font-size: 2.8em;
+        padding: 13px;
+        display: flex;
+        flex-direction: row-reverse;
+        position: fixed;
+        width: 100%;
+        top: 0;
+        left: 0;
+        z-index: 200;
+        cursor: pointer;
+        @include phone {
+            font-size: 2em;
+        }
+        @include phone-medium {
+            font-size: 3em;
+        }
+    }
+    &:checked ~ .menu{
+        display: block;
+        left: 0;
+    }
+    &:checked{
+        + label{
+            background-color: #000;
+        }
+    }
+}
+/*MENU*/
+header{
+    width: 100%;
+    min-height: 100vh;
+    background: #000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    @include linear();
+    ul{
+        list-style: none;
+        a{
+            text-decoration: none;
+            display: block;
+            color: white;
+            background-color: $color-hsl;
+            padding: 15px;
+            font-size: 3vh;
+        }
+    }
+}
+.menu{
+    position: fixed;
+    width: 100%;
+    top: 57px;
+    left: -100%;
+    transition: all ease-in-out .3s;
+    z-index: 100;
+    @include phone-medium {
+        top: 70px;
+    }
+    a{
+        border: none;
+        border-left: 4px solid $color-lighten;
+        transition: all ease-in-out .2s;
+        &:hover{
+            background-color: $color-lighten;
+        }
+    }
+    li{
+        &:hover{
+            .submenu{
+                display: block;
+            }
+            span{
+                color: black;
+            }
+        }
+        span{
+            color: $color-lighten;
+            padding: 20px;
+        }
+    }
+}
+.submenu{
+    display: none;
+    a{
+        background-color:#8F8F8F;
+        color: white;
+        padding: 5px 0 5px 40px;
+    }
+}
+.title-container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.párrafo{
+    min-height: 40vh;
+    display: flex;
+    justify-content: center;
+    @include phone {
+        flex-direction: column;
+        align-items: center;
+        margin-top: -20px;
+    }
+    @include monitor {
+        flex-direction: row;
+    }
+    a{
+        text-decoration: none;
+        width: 40%;
+        height: 60px;
+        text-align: center;
+        color: white;
+        display: block;
+        padding: 20px;
+        border: 2px solid white;
+        margin: 10px;
+        border-radius: 5px;
+        font-size: 2.3em;
+    }
+    .btn-1{
+        background-color: $color-lighten;
+        border: 2px solid $color-lighten;
+        transition: all ease-in-out .3s;
+        @include phone {
+            width: 70%;
+        }
+        @include monitor {
+            width: 50%;
+        }
+        @include flex();
+        &:hover{
+            background: none;
+            border: 2px solid white;
+        }
+    }
+    .btn-2{
+        transition: all ease-in-out .3s;
+        @include phone {
+            width: 70%;
+        }
+        @include monitor {
+            width: 50%;
+        }
+        @include flex();
+        &:hover{
+            background-color: $color-lighten;
+            border: 2px solid $color-lighten;
+        }
+    }
+}
+.title{
+    min-height: 60vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    text-align: center;
+    h1{
+        color: white;
+        font-size: 2.4em;
+        padding: 10px;
+        @include phone{
+            font-size: 2em;
+        }
+        @include phone-medium {
+            font-size: 3em;
+        }
+    }
+    p{
+        color: $color-grey;
+        font-size: 1.2em;
+        @include phone-medium {
+            font-size: 1.5em;
+        }
+    }
+}
+.subir{
+    color: $color-lighten;
+    font-size: 3em;
+    cursor: pointer;
+    position: fixed;
+    bottom: 0;
+    right: 0;
+    padding: 10px;
+    z-index: 100;
+}
+
+
+

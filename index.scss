@@ -1,0 +1,15 @@
+*{
+    font-family: sans-serif;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+@import "responsive.scss";
+@import "header.scss";
+@import "about.scss";
+@import "services.scss";
+@import "sub.scss";
+@import "portfolio.scss";
+@import "team.scss";
+@import "form.scss";
+@import "footer.scss";
